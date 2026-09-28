@@ -1,0 +1,51 @@
+services:
+  - type: web
+    name: binance-crypto-signal-bot
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: BINANCE_API_KEY
+        sync: false
+      - key: BINANCE_SECRET_KEY
+        sync: false
+      - key: ENABLE_SPOT
+        value: "true"
+      - key: ENABLE_FUTURES
+        value: "true"
+      - key: QUOTE_ASSET
+        value: "USDT"
+      - key: MIN_24H_VOLUME_USDT
+        value: "500000"
+      - key: KLINE_TIMEFRAME
+        value: "1h"
+      - key: KLINE_LIMIT
+        value: "300"
+      - key: RSI_PERIOD
+        value: "14"
+      - key: RSI_OVERSOLD
+        value: "30.0"
+      - key: RSI_OVERBOUGHT
+        value: "70.0"
+      - key: EMA_PERIOD
+        value: "200"
+      - key: VOLUME_MA_PERIOD
+        value: "20"
+      - key: COOLDOWN_HOURS
+        value: "4.0"
+      - key: SCAN_INTERVAL_MINUTES
+        value: "15"
+      - key: MAX_CONCURRENT_REQUESTS
+        value: "20"
+      - key: DATABASE_PATH
+        value: "data/signals.db"
+      - key: LOG_LEVEL
+        value: "INFO"

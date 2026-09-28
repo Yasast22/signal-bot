@@ -1,0 +1,18 @@
+# =================================================================
+# Binance 24/7 Trading Signal Generator - Production Dependencies
+# =================================================================
+
+# Core Asynchronous Networking & HTTP
+aiohttp>=3.9.0
+yarl>=1.9.0
+multidict>=6.0.0
+
+# Quantitative Analysis & Technical Indicators
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Environment Configuration
+python-dotenv>=1.0.0
+
+# Testing Framework
+pytest>=7.4.0
