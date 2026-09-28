@@ -1,3 +1,4 @@
+import html
 """
 Main 24/7 Cryptocurrency Trading Signal Generator Worker Bot.
 
